@@ -14,7 +14,11 @@
 
       .pdf-ul li {
         display: inline;
+<<<<<<< HEAD
 /*        line-height: 39px;*/
+=======
+        line-height: 39px;
+>>>>>>> origin/gh-pages
       }
 
       .pdf-ul {
@@ -72,8 +76,12 @@
       .pdf-disabled, .pdf-hidden {
         color: #666666;
       }
+<<<<<<< HEAD
 
       .pdf-zoom-lvl {
+=======
+      .pdf-zoom-lvl{
+>>>>>>> origin/gh-pages
         background-color: #686868;
         border: 1px solid black;
         color: #ddd;
@@ -135,6 +143,7 @@
   <script src="../scripts/main.js"></script>
   <!-- /build -->
 
+<<<<<<< HEAD
 
   <script>
     Polymer({
@@ -157,6 +166,13 @@
                     this.instance.loadPDF();
                   }
                 }
+=======
+  <script>
+    Polymer({
+              is: 'pdf-reader',
+              ready: function () {
+                this.instance = new Polymer.Reader(this);
+>>>>>>> origin/gh-pages
               },
               attributeChanged: function (attrName, oldVal, newVal) {
                 this.instance.setSize(attrName, newVal);

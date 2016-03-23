@@ -1,6 +1,12 @@
+<<<<<<< HEAD
  /* global PDFJS, URL */
 
  'use strict';
+=======
+/* global PDFJS, URL */
+
+'use strict';
+>>>>>>> origin/gh-pages
 
 (function (window, undefined) {
   var Reader = function (el) {
@@ -22,14 +28,22 @@
 
     this.ctx = this.viewport.getContext('2d');
 
+<<<<<<< HEAD
     //this.SRC = el.getAttribute('src');
     this.SRC = el.src.path;
+=======
+    this.SRC = el.getAttribute('src');
+>>>>>>> origin/gh-pages
     this.WIDTH = el.getAttribute('width');
     this.HEIGHT = el.getAttribute('height');
 
     this.setEvents();
     this.setSize();
+<<<<<<< HEAD
     PDFJS.workerSrc = 'app/scripts/pdf.worker.js';
+=======
+    PDFJS.workerSrc = 'scripts/pdf.worker.js';
+>>>>>>> origin/gh-pages
     this.loadPDF();
   };
 
@@ -37,6 +51,7 @@
     var width = this.WIDTH,
       height = this.HEIGHT;
 
+<<<<<<< HEAD
     if (attrName === 'width')
     {
       width = newVal;
@@ -44,6 +59,13 @@
 
     if (attrName === 'height')
     {
+=======
+    if (attrName === 'width') {
+      width = newVal;
+    }
+
+    if (attrName === 'height') {
+>>>>>>> origin/gh-pages
       height = newVal;
     }
 
@@ -54,10 +76,14 @@
     this.viewportOutStyle.height = height - 40 + 'px';
   };
 
+<<<<<<< HEAD
   Reader.prototype.setSrc = function (src) {
     this.SRC = src;
   };
   Reader.prototype.loadPDF = function () {
+=======
+  Reader.prototype.loadPDF = function() {
+>>>>>>> origin/gh-pages
     var self = this;
 
     PDFJS.getDocument(this.SRC).then(function (pdf) {
@@ -82,19 +108,29 @@
       self.pageW = page.view[2];
       self.pageH = page.view[3];
 
+<<<<<<< HEAD
       if (self.currentZoomVal === 0 || !!resize)
       {
+=======
+      if (self.currentZoomVal === 0 || !!resize) {
+>>>>>>> origin/gh-pages
         scaleW = Math.round((self.WIDTH / self.pageW) * 100) / 100,
           scaleH = Math.round(((self.HEIGHT - 40) / self.pageH) * 100) / 100,
           scale = Math.min(scaleH, scaleW);
         self.currentZoomVal = self.fitZoomVal = scale;
         self.widthZoomVal = self.WIDTH / self.pageW;
       }
+<<<<<<< HEAD
       if (!!resize)
       {
         self.zoomPage({target: self.zoomLvl});
       } else
       {
+=======
+      if (!!resize) {
+        self.zoomPage({target: self.zoomLvl});
+      } else {
+>>>>>>> origin/gh-pages
         scale = self.currentZoomVal;
 
         viewerViewport = page.getViewport(scale);
@@ -116,6 +152,7 @@
     });
   };
 
+<<<<<<< HEAD
   Reader.prototype.setViewportPos = function () {
     this.viewportStyle.left = (this.WIDTH - this.pageW) / 2 + 'px';
 
@@ -124,16 +161,30 @@
       this.viewportStyle.top = (this.HEIGHT - this.pageH - 40) / 2 + 'px';
     } else
     {
+=======
+  Reader.prototype.setViewportPos = function() {
+    this.viewportStyle.left = (this.WIDTH - this.pageW) / 2 + 'px';
+
+    if (this.pageH < this.HEIGHT) {
+      this.viewportStyle.top = (this.HEIGHT - this.pageH - 40) / 2 + 'px';
+    } else {
+>>>>>>> origin/gh-pages
       this.viewportStyle.top = 0;
     }
   };
 
   Reader.prototype.loadViewer = function (numOfPages) {
+<<<<<<< HEAD
     if (numOfPages === 1)
     {
       this.pageNav.classList.add('pdf-hidden');
     } else
     {
+=======
+    if (numOfPages === 1) {
+      this.pageNav.classList.add('pdf-hidden');
+    } else {
+>>>>>>> origin/gh-pages
       this.pageNav.classList.remove('pdf-hidden');
     }
 
@@ -195,6 +246,7 @@
       step = 0.1,
       digValue;
 
+<<<<<<< HEAD
     if (zoom.classList.contains('pdf-zoom-lvl'))
     {
       digValue = parseInt(zoom.value, 10);
@@ -219,20 +271,44 @@
       }
       if (parseInt(zoom.value, 10) !== 200)
       {
+=======
+    if (zoom.classList.contains('pdf-zoom-lvl')) {
+      digValue = parseInt(zoom.value, 10);
+
+      if (zoom.value === 'fit') {
+        context.currentZoomVal = context.fitZoomVal;
+      } else if (zoom.value === 'width') {
+        context.currentZoomVal = context.widthZoomVal;
+      } else {
+        context.currentZoomVal = digValue / 100;
+
+        if (digValue === 200) {
+          context.zoomNav[1].classList.add('pdf-disabled');
+        }
+      }
+      if (parseInt(zoom.value, 10) !== 200) {
+>>>>>>> origin/gh-pages
         context.zoomNav[1].classList.remove('pdf-disabled');
       }
       context.zoomNav[0].classList.remove('pdf-disabled');
 
       context.renderPDF(context.currentPage);
+<<<<<<< HEAD
     } else
     {
       if (zoom.classList.contains('pdf-scale-down'))
       {
         step = -0.1;
+=======
+    } else {
+      if (zoom.classList.contains('pdf-scale-down')) {
+        step = - 0.1;
+>>>>>>> origin/gh-pages
       }
 
       context.currentZoomVal = Math.round((Math.round(context.currentZoomVal * 10) / 10 + step) * 10) / 10;
 
+<<<<<<< HEAD
       if (context.currentZoomVal <= 0.1)
       {
         context.currentZoomVal = 0.1;
@@ -248,6 +324,19 @@
           context.zoomNav[1].classList.remove('pdf-disabled');
           context.renderPDF(context.currentPage);
         }
+=======
+      if (context.currentZoomVal <= 0.1) {
+        context.currentZoomVal = 0.1;
+        context.zoomNav[0].classList.add('pdf-disabled');
+      } else if (context.currentZoomVal >= 2) {
+        context.currentZoomVal = 2;
+        context.zoomNav[1].classList.add('pdf-disabled');
+      } else {
+        context.zoomNav[0].classList.remove('pdf-disabled');
+        context.zoomNav[1].classList.remove('pdf-disabled');
+        context.renderPDF(context.currentPage);
+      }
+>>>>>>> origin/gh-pages
 
       context.zoomCustom.innerHTML = Math.round(context.currentZoomVal * 100) + '%';
       context.zoomFit.selected = false;
@@ -255,7 +344,11 @@
     }
   };
 
+<<<<<<< HEAD
   Reader.prototype.createDownloadLink = function () {
+=======
+  Reader.prototype.createDownloadLink = function() {
+>>>>>>> origin/gh-pages
     var self = this;
 
     this.PDF.getData().then(function (data) {
@@ -272,8 +365,12 @@
     a.href = this.downloadLink;
     a.target = '_parent';
 
+<<<<<<< HEAD
     if ('download' in a)
     {
+=======
+    if ('download' in a) {
+>>>>>>> origin/gh-pages
       a.download = filename[filename.length - 1];
     }
 
@@ -282,10 +379,17 @@
     a.parentNode.removeChild(a);
   };
 
+<<<<<<< HEAD
   Reader.prototype.setEvents = function () {
     var self = this;
 
     this.reader.querySelector('.pdf-download .pdf-btn').addEventListener('click', function () {
+=======
+  Reader.prototype.setEvents = function() {
+    var self = this;
+
+    this.reader.querySelector('.pdf-download .pdf-btn').addEventListener('click', function() {
+>>>>>>> origin/gh-pages
       self.download(self);
     }, false);
     [].forEach.call(this.pageNavPN, function (el) {
