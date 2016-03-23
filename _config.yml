@@ -1,7 +1,7 @@
 
 project:
   name: pdf-element
-  description: Polymer 1.0 component to render PDF
+  description: Polymer element to render PDF documents
 
 markdown: kramdown
 kramdown:
