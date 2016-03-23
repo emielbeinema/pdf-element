@@ -14,7 +14,7 @@
 
       .pdf-ul li {
         display: inline;
-/*        line-height: 39px;*/
+        line-height: 39px;
       }
 
       .pdf-ul {
@@ -40,7 +40,8 @@
       .pdf-download {
         float: right;
         width: 33%;
-        text-align: right
+        text-align: right;
+        box-sizing: initial;
       }
 
       .pdf-page-num {
@@ -50,11 +51,16 @@
         border: 1px solid black;
         color: #ddd;
         border-radius: 2px;
+        height: initial;
+        font-size: initial;
+        padding: 2px;
+        margin: 0;
       }
 
       .pdf-viewer {
         text-align: center;
         border: 1px solid #4d4d4d;
+        box-sizing: initial;
       }
 
       .pdf-viewport-out {
@@ -67,6 +73,7 @@
         position: relative;
         transition: all 200ms ease-in-out;
         border: 1px solid #eeeeee;
+        box-sizing: initial;
       }
 
       .pdf-disabled, .pdf-hidden {
@@ -78,6 +85,10 @@
         border: 1px solid black;
         color: #ddd;
         border-radius: 2px;
+        display: initial;
+        height: initial;
+        width: initial;
+        padding: 2px;
       }
 
       .fa {

@@ -2,26 +2,29 @@
 <link rel="import" href="./pdf-list.html">
 
 <dom-module id="pdf-element">
-<!--
   <style>
-    .header{
-      margin-bottom: 1em;
+    .pdf-selector {
+      margin-bottom: 1em
     }
+
   </style>
--->
+
   <template>
-    <div><pdf-list selected-pdf="{{selectedPdf}}"></pdf-list></div>
+    <div class="pdf-selector">
+      <pdf-list selected-pdf="{{selectedPdf}}"></pdf-list>
+    </div>
     <pdf-reader src="{{selectedPdf}}" width=720 height=800></pdf-reader>
   </template>
 
   <script>
-    Polymer ({
+    Polymer({
       is: 'pdf-element',
-      properties:{
+      properties: {
         selectedPdf: String,
         notify: true
       },
-      ready: function(){}
-      })
+      ready: function() {}
+    })
+
   </script>
 </dom-module>
