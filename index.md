@@ -23,6 +23,8 @@ This component based on similar [component](https://github.com/roman01la/pdf-rea
 {% highlight bash %}
 git clone https://github.com/streetturtle/pdf-element.git
 cd ./pdf-element
+npm install
+bower install
 gulp serve
 {% endhighlight bash %}
 
