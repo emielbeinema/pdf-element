@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/pashik/HomeDev/pdf-element/_site/bower_components/promise-polyfill/Gruntfile.js",
+        "/home/pashik/HomeDev/pdf-element/_site/bower_components/promise-polyfill/Promise-Statics.js",
+        "/home/pashik/HomeDev/pdf-element/_site/app/scripts/pdf.js",
+        "/home/pashik/HomeDev/pdf-element/_site/app/scripts/main.js"
+    ]
+}
