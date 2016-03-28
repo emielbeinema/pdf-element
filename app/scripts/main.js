@@ -29,7 +29,7 @@
 
    this.setEvents();
    this.setSize();
-   PDFJS.workerSrc = 'scripts/pdf.worker.js';
+   PDFJS.workerSrc = './app/scripts/pdf.worker.js';
    this.loadPDF();
  };
 

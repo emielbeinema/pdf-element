@@ -4,16 +4,20 @@
 
   <template>
     <style>
+    :host {
+      display: block;
+    }
+
       .pdf-toolbar {
         width: 100%;
         background-color: #4D4D4D;
-        height: 40px;
+        height: 38px;
         color: #e3e3e3;
       }
 
       .pdf-ul li {
         display: inline;
-        line-height: 39px;
+        line-height: 40px;
       }
 
       .pdf-ul {
@@ -22,9 +26,13 @@
       }
 
       .pdf-nav, .pdf-next-prev, .pdf-scale, .pdf-scale-down, .pdf-scale-up {
-        display: inline
+        display: inline-block;
       }
 
+      .pdf-next-prev{
+        line-height: 38px;
+        vertical-align: middle;
+      }
       .pdf-page-nav {
         float: left;
         width: 33%;
@@ -71,7 +79,7 @@
         display: block;
         position: relative;
         transition: all 200ms ease-in-out;
-        border: 1px solid #eeeeee;
+        /*border: 1px solid #eeeeee;*/
         box-sizing: initial;
       }
 
@@ -93,6 +101,10 @@
       .fa {
         font-size: 1.5em;
         cursor: pointer;
+      }
+
+      .fa-download{
+        margin-top: 7px;
       }
 
     </style>
@@ -156,15 +168,12 @@
                   observer: '_srcChanged'
                 },
               },
-              _srcChanged: function (newValue, oldValue) {
-                if (newValue != null)
-                {
+              _srcChanged: function(newValue, oldValue) {
+                if (newValue != null) {
                   if (this.instance == null)
                     this.instance = new Polymer.Reader(this);
-                  else
-                  {
-                    this.instance.setSrc(newValue);
-                    this.instance.loadPDF();
+                  else {
+                    this.instance.changePDFSource(newValue);
                   }
                 }
               },

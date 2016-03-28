@@ -2,29 +2,38 @@
 <link rel="import" href="./pdf-list.html">
 
 <dom-module id="pdf-element">
-  <style>
-    .pdf-selector {
-      margin-bottom: 1em
-    }
+<style>
+.pdf-selector {
+  margin-bottom: 1em
+}
+pdf-reader{
+  display: inline-block;
+}
 
-  </style>
+</style>
 
-  <template>
-    <div class="pdf-selector">
-      <pdf-list selected-pdf="{{selectedPdf}}"></pdf-list>
-    </div>
-    <pdf-reader src="{{selectedPdf.path}}" width=720 height=800></pdf-reader>
-  </template>
+<template>
+  <h4>Static PDF</h4>
+  <pdf-reader src="../example.pdf" width=800 height=400></pdf-reader>
 
-  <script>
-    Polymer({
-      is: 'pdf-element',
-      properties: {
-        selectedPdf: String,
-        notify: true
-      },
-      ready: function() {}
-    })
+  <h4>Dynamic PDF</h4>
+  <div class="pdf-selector">
+    <pdf-list selected-pdf="{{selectedPdf}}"></pdf-list>
+  </div>
+  <div>
+    <pdf-reader src="{{selectedPdf.path}}" width=800 height=400></pdf-reader>
+  </div>
+</template>
 
-  </script>
+<script>
+Polymer({
+  is: 'pdf-element',
+  properties: {
+    selectedPdf: String,
+    notify: true
+  },
+  ready: function() {}
+})
+
+</script>
 </dom-module>

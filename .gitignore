@@ -5,3 +5,4 @@ dist
 .idea
 .gulp-scss-cache
 _site
+bower_components
