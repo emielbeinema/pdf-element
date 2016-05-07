@@ -1,6 +1,6 @@
 {
   "name": "pdf-element",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "authors": [
     "Pavel Makhov <streetturtle@gmail.com>"
   ],
@@ -23,21 +23,22 @@
     "paper-card": "^0.1.5",
     "paper-toolbar": "^1.1.4",
     "iron-input": "^1.0.10",
-    "paper-input": "^1.1.11"
+    "paper-input": "^1.1.11",
+    "paper-spinner": "^1.1.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.5",
     "web-component-tester": "^4.0.0"
   },
   "homepage": "https://github.com/streetturtle/pdf-element",
-  "_release": "1.0.3",
+  "_release": "1.0.7",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.3",
-    "commit": "559468493af98855ff43ee92a4458207fa732798"
+    "tag": "1.0.7",
+    "commit": "2eb7bc21069c2063a1fbea44567ec1c366590cab"
   },
   "_source": "https://github.com/streetturtle/pdf-element.git",
-  "_target": "^1.0.3",
+  "_target": "^1.0.7",
   "_originalSource": "pdf-element",
   "_direct": true
 }
