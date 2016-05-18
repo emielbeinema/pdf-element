@@ -28,8 +28,8 @@ factory((root.pdfjsDistBuildPdf = {}));
   // Use strict in our context only - users might not want it
   'use strict';
 
-var pdfjsVersion = '1.5.196';
-var pdfjsBuild = 'ff6669d';
+var pdfjsVersion = '1.5.258';
+var pdfjsBuild = '8aa5901';
 
   var pdfjsFilePath =
     typeof document !== 'undefined' && document.currentScript ?
@@ -1320,7 +1320,7 @@ function createPromiseCapability() {
   /**
    * Builds a promise that is resolved when all the passed in promises are
    * resolved.
-   * @param {array} array of data and/or promises to wait for.
+   * @param {array} promises array of data and/or promises to wait for.
    * @return {Promise} New dependant promise.
    */
   Promise.all = function Promise_all(promises) {
@@ -9355,7 +9355,7 @@ var PDFPageProxy = (function PDFPageProxyClosure() {
             return;
           }
           stats.time('Rendering');
-          internalRenderTask.initalizeGraphics(transparency);
+          internalRenderTask.initializeGraphics(transparency);
           internalRenderTask.operatorListChanged();
         },
         function pageDisplayReadPromiseError(reason) {
@@ -10455,8 +10455,8 @@ var InternalRenderTask = (function InternalRenderTaskClosure() {
 
   InternalRenderTask.prototype = {
 
-    initalizeGraphics:
-        function InternalRenderTask_initalizeGraphics(transparency) {
+    initializeGraphics:
+        function InternalRenderTask_initializeGraphics(transparency) {
 
       if (this.cancelled) {
         return;
@@ -10862,8 +10862,6 @@ exports._UnsupportedManager = _UnsupportedManager;
   exports.isWorker = isWorker;
   exports.PDFJS = globalScope.PDFJS;
 }));
-
-
   }).call(pdfjsLibs);
 
   exports.PDFJS = pdfjsLibs.pdfjsDisplayGlobal.PDFJS;
@@ -10894,5 +10892,4 @@ exports._UnsupportedManager = _UnsupportedManager;
     pdfjsLibs.pdfjsDisplayDOMUtils.getFilenameFromUrl;
   exports.addLinkAttributes = pdfjsLibs.pdfjsDisplayDOMUtils.addLinkAttributes;
 }));
-
 
