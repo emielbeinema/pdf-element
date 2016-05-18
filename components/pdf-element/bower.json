@@ -1,6 +1,6 @@
 {
   "name": "pdf-element",
-  "version": "1.0.12",
+  "version": "1.0.2",
   "authors": [
     "Pavel Makhov <streetturtle@gmail.com>"
   ],
@@ -25,16 +25,5 @@
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.5",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.3",
     "web-component-tester": "^4.0.0"
-  },
-  "homepage": "https://github.com/streetturtle/pdf-element",
-  "_release": "1.0.12",
-  "_resolution": {
-    "type": "version",
-    "tag": "1.0.12",
-    "commit": "8a99982145a014e17931a1c099ed5766edf00c22"
-  },
-  "_source": "https://github.com/streetturtle/pdf-element.git",
-  "_target": "^1.0.12",
-  "_originalSource": "pdf-element",
-  "_direct": true
+  }
 }
